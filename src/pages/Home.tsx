@@ -22,7 +22,7 @@ export default function Home() {
     {
       name: 'Nguyễn Minh Danh',
       role: 'Lead Software Engineer',
-      bio: 'Full-stack maestro specializing in React and Node.js. Drives our commitment to clean code and exceptional user experiences.',
+      bio: 'Full-stack expert specializing in React and Node.js. Drives our commitment to clean code and exceptional user experiences.',
     }
   ];
 

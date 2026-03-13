@@ -24,7 +24,7 @@ export default function About() {
     {
       name: 'Nguyễn Minh Danh',
       role: 'Lead Software Engineer',
-      bio: 'Full-stack maestro specializing in React and Node.js. Drives our commitment to clean code and exceptional user experiences.',
+      bio: 'Full-stack expert specializing in React and Node.js. Drives our commitment to clean code and exceptional user experiences.',
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop',
     }
   ];

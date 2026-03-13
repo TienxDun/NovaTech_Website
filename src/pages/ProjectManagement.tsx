@@ -93,10 +93,10 @@ export default function ProjectManagement() {
   ];
 
   const communication = [
-    { type: 'Daily Standups', frequency: 'Daily (15 mins)', tool: 'Google Meet', purpose: 'Sync on progress, blockers & goals.' },
-    { type: 'Task Tracking', frequency: 'Continuous', tool: 'Jira', purpose: 'Manage backlog & track status.' },
-    { type: 'Async Comm', frequency: 'As needed', tool: 'Discord', purpose: 'Quick Q&A & general updates.' },
-    { type: 'Code Reviews', frequency: 'Per PR', tool: 'GitHub', purpose: 'Ensure quality & share knowledge.' }
+    { type: 'Daily Standups', frequency: 'Daily (15 mins)', tool: 'Google Meet', purpose: 'Sync on progress, blockers, and goals.' },
+    { type: 'Task Tracking', frequency: 'Continuous', tool: 'Jira', purpose: 'Manage backlog and track status.' },
+    { type: 'Asynchronous Comm', frequency: 'As needed', tool: 'Discord', purpose: 'Quick Q&A and general updates.' },
+    { type: 'Code Reviews', frequency: 'Per PR', tool: 'GitHub', purpose: 'Ensure quality and share knowledge.' }
   ];
 
   const qualityChecks = [
