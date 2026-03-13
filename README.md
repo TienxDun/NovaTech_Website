@@ -122,15 +122,7 @@ The project is automatically deployed to **GitHub Pages** on every push to the `
 
 ### Manual Deploy Steps
 
-1. Set `base` in `vite.config.ts` to your repository name if the site is **not** at a custom root domain:
-
-   ```ts
-   // vite.config.ts
-   export default defineConfig({
-     base: '/your-repo-name/',   // add this line
-     // ...rest of config
-   });
-   ```
+1. The `base` path is already configured in `vite.config.ts` as `/NovaTech_Website/` to match the GitHub Pages subdirectory. If you fork this repo under a different name, update that value accordingly.
 
 2. Push to `main` — the workflow handles the rest.
 

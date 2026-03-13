@@ -14,7 +14,7 @@ import ProjectManagement from './pages/ProjectManagement';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/NovaTech_Website">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
