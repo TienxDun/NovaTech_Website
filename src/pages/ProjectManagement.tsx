@@ -52,7 +52,7 @@ export default function ProjectManagement() {
     {
       id: 'testing',
       phase: 'Phase 3: Testing',
-      status: 'In Progress',
+      status: 'Completed',
       icon: ShieldCheck,
       color: 'text-emerald-600',
       iconBg: 'bg-emerald-100',
@@ -69,7 +69,7 @@ export default function ProjectManagement() {
     {
       id: 'delivery',
       phase: 'Phase 4: Delivery',
-      status: 'Pending',
+      status: 'Completed',
       icon: CheckCircle2,
       color: 'text-fuchsia-600',
       iconBg: 'bg-fuchsia-100',
@@ -94,8 +94,8 @@ export default function ProjectManagement() {
 
   const communication = [
     { type: 'Daily Standups', frequency: 'Daily (15 mins)', tool: 'Google Meet', purpose: 'Sync on progress, blockers & goals.' },
-    { type: 'Task Tracking', frequency: 'Continuous', tool: 'Trello / Jira', purpose: 'Manage backlog & track status.' },
-    { type: 'Async Comm', frequency: 'As needed', tool: 'Slack / Discord', purpose: 'Quick Q&A & general updates.' },
+    { type: 'Task Tracking', frequency: 'Continuous', tool: 'Jira', purpose: 'Manage backlog & track status.' },
+    { type: 'Async Comm', frequency: 'As needed', tool: 'Discord', purpose: 'Quick Q&A & general updates.' },
     { type: 'Code Reviews', frequency: 'Per PR', tool: 'GitHub', purpose: 'Ensure quality & share knowledge.' }
   ];
 
