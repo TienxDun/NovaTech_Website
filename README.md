@@ -1,20 +1,160 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# NovaTech Solutions — Corporate Website
 
-# Run and deploy your AI Studio app
+A modern corporate website for **NovaTech Solutions**, a fictional IT consulting firm. Built with React 19, TypeScript, Vite, and Tailwind CSS v4.
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/ed7722e9-654d-4c9b-87c8-1cb6cfaf29c1
+## Live Demo
 
-## Run Locally
+> Deployed via GitHub Pages — see the [Actions tab](../../actions) for the latest deployment status.
 
-**Prerequisites:**  Node.js
+---
 
+## Features
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+| Page | Description |
+|---|---|
+| **Home** | Hero section, services overview, team & contact |
+| **About** | Company story, mission and values |
+| **Services** | Detailed service offerings (Network, Software, Data) |
+| **Projects** | Case studies and portfolio |
+| **Careers** | Open positions and company culture |
+| **Project Management** | Interactive project timeline |
+
+Additional highlights:
+- Fully responsive layout (mobile-first)
+- Smooth page transitions powered by [Motion](https://motion.dev/)
+- Icon set from [Lucide React](https://lucide.dev/)
+- Client-side routing with React Router v7
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | React 19 |
+| Language | TypeScript 5.8 |
+| Build tool | Vite 6 |
+| Styling | Tailwind CSS v4 |
+| Routing | React Router DOM v7 |
+| Animations | Motion (Framer Motion) |
+| Icons | Lucide React |
+| AI integration | Google Generative AI SDK |
+| Runtime (dev) | Express + better-sqlite3 |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- **Node.js** >= 18
+- **npm** >= 9
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
+
+# 2. Install dependencies
+npm install
+
+# 3. Copy and fill in environment variables
+cp .env.example .env
+```
+
+### Environment Variables
+
+Create a `.env` file at the project root (never commit it):
+
+```env
+GEMINI_API_KEY=your_google_gemini_api_key_here
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+The app starts at `http://localhost:3000`.
+
+### Production Build
+
+```bash
+npm run build       # outputs to dist/
+npm run preview     # preview the production build locally
+```
+
+---
+
+## Project Structure
+
+```
+.
+├── index.html
+├── vite.config.ts
+├── tsconfig.json
+├── package.json
+└── src/
+    ├── main.tsx          # Entry point
+    ├── App.tsx           # Router setup
+    ├── index.css         # Global styles
+    ├── components/
+    │   └── Layout.tsx    # Shared navbar, footer, scroll-to-top
+    └── pages/
+        ├── Home.tsx
+        ├── About.tsx
+        ├── Services.tsx
+        ├── Projects.tsx
+        ├── Careers.tsx
+        └── ProjectManagement.tsx
+```
+
+---
+
+## Deployment
+
+The project is automatically deployed to **GitHub Pages** on every push to the `main` branch via the included [GitHub Actions workflow](.github/workflows/deploy.yml).
+
+### Manual Deploy Steps
+
+1. Set `base` in `vite.config.ts` to your repository name if the site is **not** at a custom root domain:
+
+   ```ts
+   // vite.config.ts
+   export default defineConfig({
+     base: '/your-repo-name/',   // add this line
+     // ...rest of config
+   });
+   ```
+
+2. Push to `main` — the workflow handles the rest.
+
+### Required GitHub Settings
+
+Go to **Settings → Pages** and set:
+- **Source**: `GitHub Actions`
+
+If you use the `GEMINI_API_KEY` at build time, add it as a **Repository Secret** under **Settings → Secrets and variables → Actions**.
+
+---
+
+## Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start Vite dev server on port 3000 |
+| `npm run build` | Type-check and build for production |
+| `npm run preview` | Serve the `dist/` folder locally |
+| `npm run lint` | Run TypeScript type-check (no emit) |
+| `npm run clean` | Remove the `dist/` folder |
+
+---
+
+## License
+
+This project is licensed under the [Apache 2.0 License](LICENSE).
