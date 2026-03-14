@@ -42,7 +42,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl text-center mx-auto"
           >
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 leading-[1.1]">
+            <h1 className="font-display max-[375px]:text-4xl text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 leading-[1.1]">
               Transforming Ideas into <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-fuchsia-600">Digital Reality</span>
             </h1>
             <p className="text-lg sm:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
@@ -124,9 +124,9 @@ export default function Home() {
             ].map((service, index) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`bg-white rounded-3xl p-8 border border-slate-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:border-slate-300 flex flex-col ${service.span}`}
               >
@@ -211,10 +211,10 @@ export default function Home() {
             {team.map((member, index) => (
               <motion.div 
                 key={member.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-200/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:border-slate-300 flex flex-col group"
               >
                 <div className="p-6 sm:p-8 flex flex-col items-center text-center h-full">
@@ -232,14 +232,14 @@ export default function Home() {
                   </div>
                   <p className="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">{member.bio}</p>
                   <div className="flex gap-4 mt-auto pt-4 border-t border-slate-100 w-full justify-center">
-                    <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors p-2 hover:bg-slate-50 rounded-full">
-                      <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
+                    <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors p-3 hover:bg-slate-50 rounded-full flex items-center justify-center min-w-[44px] min-h-[44px]">
+                      <Linkedin className="h-5 w-5" />
                     </a>
-                    <a href="#" className="text-slate-400 hover:text-slate-900 transition-colors p-2 hover:bg-slate-50 rounded-full">
-                      <Github className="h-4 w-4 sm:h-5 sm:w-5" />
+                    <a href="#" className="text-slate-400 hover:text-slate-900 transition-colors p-3 hover:bg-slate-50 rounded-full flex items-center justify-center min-w-[44px] min-h-[44px]">
+                      <Github className="h-5 w-5" />
                     </a>
-                    <a href="#" className="text-slate-400 hover:text-red-500 transition-colors p-2 hover:bg-slate-50 rounded-full">
-                      <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
+                    <a href="#" className="text-slate-400 hover:text-red-500 transition-colors p-3 hover:bg-slate-50 rounded-full flex items-center justify-center min-w-[44px] min-h-[44px]">
+                      <Mail className="h-5 w-5" />
                     </a>
                   </div>
                 </div>

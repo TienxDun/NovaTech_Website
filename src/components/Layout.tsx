@@ -1,5 +1,5 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { Menu, X, Terminal, ArrowUp } from 'lucide-react';
+import { Menu, X, Terminal, ArrowUp, ChevronDown, Facebook, Twitter, Linkedin, Github } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Seo from './Seo';
@@ -7,6 +7,8 @@ import Seo from './Seo';
 export default function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isCompanyOpen, setIsCompanyOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
   const location = useLocation();
 
   // Scroll to top on route change
@@ -160,37 +162,66 @@ export default function Layout() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white text-slate-600 py-10 border-t border-slate-200/60">
+      <footer className="bg-white text-slate-600 py-10 lg:py-16 border-t border-slate-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center gap-2 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+            <div className="col-span-1 md:col-span-2 flex flex-col items-center md:items-start text-center md:text-left">
+              <div className="flex items-center gap-2 mb-6 justify-center md:justify-start">
                 <div className="bg-black p-1.5 rounded-lg">
                   <Terminal className="h-4 w-4 text-white" />
                 </div>
                 <span className="font-display font-bold text-lg text-slate-900">NovaTech</span>
               </div>
-              <p className="text-sm text-slate-500 max-w-sm leading-relaxed">
+              <p className="text-sm text-slate-500 max-w-sm leading-relaxed mb-6">
                 Empowering enterprises through innovative IT solutions. We specialize in network infrastructure, software development, and data communication in Vietnam.
               </p>
+              {/* Social Icons */}
+              <div className="flex justify-center md:justify-start gap-4 mb-2 md:mb-0">
+                <a href="#" aria-label="Facebook" className="p-2.5 bg-slate-50 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 border border-slate-100 rounded-full transition-all">
+                  <Facebook className="w-4 h-4" />
+                </a>
+                <a href="#" aria-label="Twitter" className="p-2.5 bg-slate-50 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 border border-slate-100 rounded-full transition-all">
+                  <Twitter className="w-4 h-4" />
+                </a>
+                <a href="#" aria-label="LinkedIn" className="p-2.5 bg-slate-50 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 border border-slate-100 rounded-full transition-all">
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a href="#" aria-label="GitHub" className="p-2.5 bg-slate-50 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 border border-slate-100 rounded-full transition-all">
+                  <Github className="w-4 h-4" />
+                </a>
+              </div>
             </div>
             
-            <div>
-              <h3 className="text-xs font-bold text-slate-900 tracking-wider uppercase mb-4">Company</h3>
-              <ul className="space-y-2.5">
-                <li><Link to="/about" className="text-sm text-slate-500 hover:text-black transition-colors">About Us</Link></li>
-                <li><Link to="/services" className="text-sm text-slate-500 hover:text-black transition-colors">Services</Link></li>
-                <li><Link to="/projects" className="text-sm text-slate-500 hover:text-black transition-colors">Projects</Link></li>
-                <li><Link to="/careers" className="text-sm text-slate-500 hover:text-black transition-colors">Careers</Link></li>
+            <div className="border-t border-slate-100 md:border-t-0 pt-6 md:pt-0">
+              <button 
+                onClick={() => setIsCompanyOpen(!isCompanyOpen)} 
+                className="w-full flex justify-between items-center md:cursor-auto md:pointer-events-none group"
+                aria-expanded={isCompanyOpen}
+              >
+                <h3 className="text-xs font-bold text-slate-900 tracking-wider uppercase">Company</h3>
+                <ChevronDown className={`w-4 h-4 text-slate-400 md:hidden transition-transform duration-300 ${isCompanyOpen ? 'rotate-180' : ''}`} />
+              </button>
+              <ul className={`mt-2 md:mt-6 space-y-0 md:space-y-4 overflow-hidden transition-all duration-300 md:h-auto md:opacity-100 ${isCompanyOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 md:max-h-none'}`}>
+                <li className="border-b border-slate-50 md:border-none"><Link to="/about" className="block py-3 md:py-0 text-sm text-slate-500 hover:text-black transition-colors">About Us</Link></li>
+                <li className="border-b border-slate-50 md:border-none"><Link to="/services" className="block py-3 md:py-0 text-sm text-slate-500 hover:text-black transition-colors">Services</Link></li>
+                <li className="border-b border-slate-50 md:border-none"><Link to="/projects" className="block py-3 md:py-0 text-sm text-slate-500 hover:text-black transition-colors">Projects</Link></li>
+                <li className="md:border-none"><Link to="/careers" className="block py-3 md:py-0 text-sm text-slate-500 hover:text-black transition-colors">Careers</Link></li>
               </ul>
             </div>
 
-            <div>
-              <h3 className="text-xs font-bold text-slate-900 tracking-wider uppercase mb-4">Contact</h3>
-              <ul className="space-y-2.5 text-sm text-slate-500">
-                <li>806 Le Quang Dao, Trung My Tay, District 12, Ho Chi Minh City</li>
-                <li><a href="mailto:contact@huflit.edu.vn" className="hover:text-black transition-colors">contact@huflit.edu.vn</a></li>
-                <li><a href="tel:+842838632052" className="hover:text-black transition-colors">(+84 28) 3863 2052</a></li>
+            <div className="border-t border-slate-100 md:border-t-0 pt-6 md:pt-0">
+              <button 
+                onClick={() => setIsContactOpen(!isContactOpen)} 
+                className="w-full flex justify-between items-center md:cursor-auto md:pointer-events-none group"
+                aria-expanded={isContactOpen}
+              >
+                <h3 className="text-xs font-bold text-slate-900 tracking-wider uppercase">Contact</h3>
+                <ChevronDown className={`w-4 h-4 text-slate-400 md:hidden transition-transform duration-300 ${isContactOpen ? 'rotate-180' : ''}`} />
+              </button>
+              <ul className={`mt-2 md:mt-6 space-y-0 md:space-y-4 overflow-hidden transition-all duration-300 md:h-auto md:opacity-100 ${isContactOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 md:max-h-none'}`}>
+                <li className="border-b border-slate-50 md:border-none py-3 md:py-0 text-sm text-slate-500 block">806 Le Quang Dao, District 12, HCMC</li>
+                <li className="border-b border-slate-50 md:border-none"><a href="mailto:contact@huflit.edu.vn" className="block py-3 md:py-0 text-sm text-slate-500 hover:text-black transition-colors">contact@huflit.edu.vn</a></li>
+                <li className="md:border-none"><a href="tel:+842838632052" className="block py-3 md:py-0 text-sm text-slate-500 hover:text-black transition-colors">(+84 28) 3863 2052</a></li>
               </ul>
             </div>
           </div>
